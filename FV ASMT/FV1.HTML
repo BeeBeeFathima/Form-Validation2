@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Form Validation</title>
+	<!-- favicon -->
+	<link rel="icon" type="image/icon" href="IMAGES/ICON.JPG">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="FV1.CSS">
+	</head>
+<body>
+	<fieldset>
+	<h1>FORM VALIDATION</h1>
+	<table>
+		<form class="FMM" action="" method="post">
+			<tr>
+				<td><label>User Name:<span class="req">*</span></label></td>
+				<td><input type="text" name="uname" id="uname" class="textfield" required onkeypress="remove()"></td>
+				<tr>
+				<td colspan="2"><span id="unmsg">Alert!!! User name must content between 5 and 13 chars only!</span></td>
+				</tr>
+			</tr>
+			<tr>
+				<td><label>Email Id: <span class="req">*</span></label></td>
+				<td><input type="email" name="email" id="email" class="textfield" required onkeypress="remove()"></td>
+				<tr>
+				<td colspan="2"><span id="emailmsg">Invalid Email ID!</span></td>
+				</tr>
+			</tr>
+			<tr>
+				<td><label>Phone no: <span class="req">*</span></label></td>
+				<td><input type="tel" name="phno" id="phno" class="textfield" required onkeypress="remove()"></td>
+				<tr>
+				<td colspan="2"><span id="phono">Alert!!! Phone no must content only 10 digits!</span></td>
+				</tr>
+			</tr>
+			<tr>
+				<td><label>Gender:</label></td>
+				<td><input type="radio" name="gender" id="m" onchange="remove()"><label>Male</label>
+				&emsp;&emsp;<input type="radio" name="gender" id="f" onchange="remove()"><label>Female</label></td>
+				<tr>
+				<td colspan="2"><span id="gen">Alert!!! Please select gender!</span></td>
+				</tr>
+			</tr>
+			<tr>
+				<td><label>Password: <span class="req">*</span></label></td>
+				<td><input type="password" name="pwd" id="pwd" class="textfield" required onkeypress="remove()"></td>
+				<tr>
+				<td></td> 
+				<td colspan="2"><input type="checkbox" id="shpwd" onchange="return pwdshow()">&emsp;<label>Show Password</label></td>
+				</tr>
+				<tr>
+				<td colspan="2"><span id="pw">Alert!!! Password must content between 10 to 17 chars only!</span></td>
+				</tr>
+			</tr>
+			<tr>
+				<td><label>Confirm Password: <span class="req">*</span></label></td>
+				<td><input type="password" name="cpwd" id="cpwd" class="textfield" required onkeypress="remove()"></td>
+				<tr>
+				<td></td> 
+				<td colspan="2"><input type="checkbox" id="shcopwd" onchange="return copwdshow()">&emsp;<label>Show Password</label></td>
+				</tr>
+				<tr>
+				<td colspan="2"><span id="cpw">Alert!!! Password missmatch!</span></td>
+				</tr>
+			</tr>
+			<tr>
+				<td>&emsp;&emsp;&emsp;<button class="sbtn" onclick="return urname()">SUBMIT</button></td>
+			</tr>
+	</table>
+	</fieldset>
+	</form>
+	<script>
+	
+	function urname()
+	{
+	var username=document.getElementById("uname").value;
+	var email=document.getElementById("email").value;
+	var phoneno=document.getElementById("phno").value;
+	var male=document.getElementById("m").checked;
+	var female=document.getElementById("f").checked;
+	var pswd=document.getElementById("pwd").value;
+	var copswd=document.getElementById("cpwd").value;
+	
+		if (username.length<6 || username.length>13)
+		{
+			document.getElementById("unmsg").style.display="inline";
+			return false;
+		}
+		else if (email!=em)
+		{
+			document.getElementById("emailmsg").style.display="inline";
+			return false;
+		}
+		else if (phoneno.length != 10)
+		{
+			document.getElementById("phono").style.display="inline";
+			return false;
+		}
+		else if (male==false && female==false)
+		{
+			document.getElementById("gen").style.display="inline";
+			return false;
+		}
+		
+		else if (male==true)
+		{
+			alert("You have select Male");
+			return false;
+		}
+		else if (female==true)
+		{
+			alert("You have select Female");
+			return false;
+		}
+		else if (pswd.length<10 || pswd.length>17)
+		{
+			document.getElementById("pw").style.display="inline";
+			return false;
+		}
+		else if (copswd!=pswd)
+		{
+			document.getElementById("cpw").style.display="inline";
+			return false;
+		}
+	}
+	
+	function pwdshow()
+	{
+		var copwd=document.getElementById("pwd");
+		var shpwd=document.getElementById("shpwd").checked;
+		if (shpwd==true)
+		{
+			copwd.setAttribute("type","text");
+			return false;
+		}
+		else
+		{
+			copwd.setAttribute("type","password");
+			return false;
+		}
+	}
+	function copwdshow()
+	{
+		var copwd=document.getElementById("cpwd");
+		var shcopwd=document.getElementById("shcopwd").checked;
+		if (shcopwd==true)
+		{
+			copwd.setAttribute("type","text");
+			return false;
+		}
+		else
+		{
+			copwd.setAttribute("type","password");
+			return false;
+		}
+	}
+	
+	function remove()
+	{
+			document.getElementById("unmsg").style.display="none";
+			document.getElementById("emailmsg").style.display="none";
+			document.getElementById("phono").style.display="none";
+			document.getElementById("gen").style.display="none";
+			document.getElementById("pw").style.display="none";
+			document.getElementById("cpw").style.display="none";	
+	}
+
+	</script>
+</body>
+</html>

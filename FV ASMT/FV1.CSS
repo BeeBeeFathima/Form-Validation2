@@ -1,0 +1,66 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  font-family: georgia;
+}
+body {
+  font-family: georgia;
+  color: #fff;
+  background-image: url("IMAGES/BG.JPG");
+  width: 100%;
+  /* height:500px; */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+}
+fieldset {
+  margin: 40px 40px;
+  border: 10px solid yellow;
+  width: 600px;
+}
+HR {
+  padding-top: 30px;
+}
+.FM {
+  padding: 50px;
+  /* margin:50PX; */
+  border: 10px solid yellow;
+  width: 400px;
+}
+.SB {
+  background: green;
+  color: #fff;
+  padding: 10px;
+}
+td {
+  padding: 5px;
+  font-size: 20px;
+}
+span {
+  display: none;
+}
+h1 {
+  color: yellow;
+  border-bottom: 2px solid yellow;
+  padding-top: 30px;
+}
+input box {
+  font-size: 60px;
+}
+.sbtn {
+  padding: 10px;
+  background: green;
+  color: #fff;
+  position: relative;
+  left: 80px;
+  border: none;
+}
+.sbtn:hover {
+  background-color: yellow;
+  color: green;
+}
