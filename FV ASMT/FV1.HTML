@@ -24,7 +24,7 @@
 				<td><label>Email Id: <span class="req">*</span></label></td>
 				<td><input type="email" name="email" id="email" class="textfield" required onkeypress="remove()"></td>
 				<tr>
-				<td colspan="2"><span id="emailmsg">Invalid Email ID!</span></td>
+				<td colspan="2"><span id="emailmsg">Alert!!! Invalid Email ID!</span></td>
 				</tr>
 			</tr>
 			<tr>
@@ -87,11 +87,11 @@
 			document.getElementById("unmsg").style.display="inline";
 			return false;
 		}
-		else if (email!=em)
-		{
-			document.getElementById("emailmsg").style.display="inline";
-			return false;
-		}
+		// else if (email!=em)
+		// {
+		// 	document.getElementById("emailmsg").style.display="inline";
+		// 	return false;
+		// }
 		else if (phoneno.length != 10)
 		{
 			document.getElementById("phono").style.display="inline";
